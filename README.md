@@ -1,2 +1,2 @@
-# vk_music_downloader
-This is a small utility for downloading all your music from VK in automatic mode.
+This is a small utility for downloading all your music from VK in automatic mode...
+The waiting time for connection and downloading directly depends on the amount of music on your account.
