@@ -41,6 +41,7 @@ music_num = len(music)
 
 score = 1
 errors = 0
+arr_errors = []
 create_file = open("errors.txt", "w")
 create_file.close()
 f = open('errors.txt', 'w')
@@ -53,7 +54,7 @@ for i in music:
                 output_file.write(r.content)
     except OSError:
         print('[' + str(score) + '/' + str(music_num) + ']' + '  ERROR: ' + i["artist"] + '  |  ' + i["title"])
-        f.write(i["artist"] + '  |  ' + i["title"] + '\n')
+        arr_errors.append(i["artist"] + '  |  ' + i["title"] + '\n')
         errors += 1
     score += 1
 print('')
@@ -61,4 +62,6 @@ print('finish!')
 print('your music is in the vk_music folder')
 if(errors > 0):
     print('')
-    print('all tracks that could not be downloaded are recorded in the "errors.txt" file')
+    print('some tracks could not be downloaded(please download them yourself):')
+    for i in arr_errors:
+        print(" " + i)
